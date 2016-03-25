@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [application setStatusBarHidden:YES];
   NSURL *jsCodeLocation;
 
   /**
