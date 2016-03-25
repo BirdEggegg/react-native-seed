@@ -21,7 +21,7 @@ static NSString *const RCTDevMenuSettingsKey = @"RCTDevMenu";
     
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithDictionary:[defaults objectForKey:RCTDevMenuSettingsKey]];
-  settings[@"hotLoadingEnabled"] = @YES;
+  settings[@"liveReloadEnabled"] = @YES;
   [defaults setObject:settings forKey:RCTDevMenuSettingsKey];
   [defaults synchronize];
     
