@@ -8,14 +8,23 @@
  */
 
 #import "AppDelegate.h"
-
 #import "RCTRootView.h"
+#import "RCTDevMenu.h"
+
+static NSString *const RCTDevMenuSettingsKey = @"RCTDevMenu";
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [application setStatusBarHidden:YES];
+    
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithDictionary:[defaults objectForKey:RCTDevMenuSettingsKey]];
+  settings[@"liveReloadEnabled"] = @YES;
+  [defaults setObject:settings forKey:RCTDevMenuSettingsKey];
+  [defaults synchronize];
+    
   NSURL *jsCodeLocation;
 
   /**
