@@ -53,7 +53,16 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [self config];
   return YES;
+}
+
+- (void)config {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithDictionary:[defaults objectForKey:@"RCTDevMenu"]];
+  settings[@"liveReloadEnabled"] = @YES;
+  [defaults setObject:settings forKey:RCTDevMenuSettingsKey];
+  [defaults synchronize];
 }
 
 @end
