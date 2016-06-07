@@ -61,7 +61,7 @@
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   NSMutableDictionary *settings = [[NSMutableDictionary alloc] initWithDictionary:[defaults objectForKey:@"RCTDevMenu"]];
   settings[@"liveReloadEnabled"] = @YES;
-  [defaults setObject:settings forKey:RCTDevMenuSettingsKey];
+  [defaults setObject:settings forKey:@"RCTDevMenu"];
   [defaults synchronize];
 }
 
